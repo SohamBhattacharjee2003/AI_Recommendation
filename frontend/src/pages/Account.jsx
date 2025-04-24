@@ -11,10 +11,10 @@ function Account() {
   }, []);
 
   return (
-    <div className="flex min-h-screen bg-gray-100">
+    <div className="grid grid-cols-6 w-full min-h-screen bg-gray-100">
       {/* Left Sidebar - Navbar */}
-      <aside className="w-64 bg-white shadow-md border-r border-gray-200">
-        <nav className="p-6 space-y-4">
+      <div className=" col-span-1 bg-white shadow-md border-r border-gray-200">
+        <div className="p-6 ">
           <div className="text-lg font-bold text-gray-800 mb-4">CareerCompass</div>
           <ul className="space-y-2">
             <li>
@@ -50,11 +50,11 @@ function Account() {
               </Link>
             </li>
           </ul>
-        </nav>
-      </aside>
+        </div>
+      </div>
 
       {/* Main Content */}
-      <main className="flex-1 p-6 flex flex-col items-center justify-center">
+      <main className="col-span-5 p-6 flex flex-col items-center justify-center">
         <h1 className="text-3xl font-bold text-black mb-4">Account Page</h1>
         {user ? (
           <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-md">

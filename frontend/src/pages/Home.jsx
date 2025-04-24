@@ -2,6 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 
+// Add these animation configs after line 3
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+};
+
+const stagger = {
+  visible: { transition: { staggerChildren: 0.2 } }
+};
+
 function Home() {
   const location = useLocation();
   const isLoggedIn = localStorage.getItem('user'); // Check if user data exists
@@ -9,7 +19,7 @@ function Home() {
   return (
     <div className="bg-[#eef0ff] min-h-screen flex flex-col">
       {/* Header Section */}
-      <header className="bg-[#f8f9ff] border-b border-gray-200">
+      <header initial={{ opacity: 0, y: -20 }} className="bg-[#f8f9ff] border-b border-gray-200">
         <nav
           aria-label="Primary Navigation"
           className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between h-16"
@@ -17,7 +27,7 @@ function Home() {
           <a className="flex items-center space-x-2" href="#">
             <i className="fas fa-graduation-cap text-[#6c63ff] text-lg"></i>
             <span className="font-extrabold text-black text-lg select-none">
-              CareerCompass
+              CareerCompass AI
             </span>
           </a>
           <ul className="hidden md:flex items-center space-x-8 text-gray-500 text-sm font-medium select-none">
@@ -31,41 +41,66 @@ function Home() {
               </a>
             </li>
             <li>
-              <a
-                href="/dashboard"
-                className={`hover:text-gray-900 cursor-pointer ${location.pathname === '/dashboard' ? 'text-black font-bold' : ''
-                  }`}
-              >
-                Dashboard
+              <a href="/jobs" className={`hover:text-gray-900 cursor-pointer ${location.pathname === '/' ? 'text-black font-bold' : ''
+                }`}>
+                Docs
+              </a>
+            </li>
+            
+              <li>
+                <a
+                  href="/"
+                  className={`hover:text-gray-900 cursor-pointer ${location.pathname === '/' ? 'text-black font-bold' : ''
+                    }`}
+                >
+                  Blog
+                </a>
+              </li>
+            
+            <li>
+              <a href="/jobs" className={`hover:text-gray-900 cursor-pointer ${location.pathname === '/' ? 'text-black font-bold' : ''
+                }`}>
+
+                Jobs
               </a>
             </li>
             <li>
-              <a href="/jobs" className="hover:text-gray-900 cursor-pointer">
-                Jobs
+              <a
+                href="/"
+                className={`hover:text-gray-900 cursor-pointer ${location.pathname === '/' ? 'text-black font-bold' : ''
+                  }`}
+              >
+                About Us
+              </a>
+            </li>
+            <li>
+              <a
+                href="/"
+                className={`hover:text-gray-900 cursor-pointer ${location.pathname === '/' ? 'text-black font-bold' : ''
+                  }`}
+              >
+                Contact Us
               </a>
             </li>
           </ul>
           <div className="flex items-center space-x-4">
-            {isLoggedIn ? (
-              <Link to="/dashboard">
+
+
+
+
+            <>
+              <Link to="/login">
                 <button className="text-black text-sm font-semibold px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100">
-                  Dashboard
+                  Log in
                 </button>
               </Link>
-            ) : (
-              <>
-                <Link to="/login">
-                  <button className="text-black text-sm font-semibold px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100">
-                    Log in
-                  </button>
-                </Link>
-                <Link to="/signup">
-                  <button className="bg-[#6c63ff] text-white text-sm font-semibold px-4 py-2 rounded-md hover:bg-[#574fd6]">
-                    Sign up
-                  </button>
-                </Link>
-              </>
-            )}
+              <Link to="/signup">
+                <button className="bg-[#6c63ff] text-white text-sm font-semibold px-4 py-2 rounded-md hover:bg-[#574fd6]">
+                  Sign up
+                </button>
+              </Link>
+            </>
+
           </div>
         </nav>
       </header>
@@ -98,7 +133,7 @@ function Home() {
             alt="Close-up photo of a laptop keyboard and screen showing colorful code with syntax highlighting in a dark-themed code editor"
             className="rounded-lg shadow-lg w-full object-cover"
             height="400"
-            src="https://storage.googleapis.com/a1aa/image/db5f81ad-e692-4197-a2cd-cdaaf6705759.jpg"
+            src="/images/computer.jpeg"
             width="600"
           />
         </section>
