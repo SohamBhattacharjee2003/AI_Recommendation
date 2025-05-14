@@ -51,10 +51,7 @@
 ---
 
 ## 🖼️ Screenshots
-
-| Dashboard | Resume Suggestions |
-|----------|---------------------|
-| ![Dashboard](assets/dashboard.png) | ![Resume](assets/resume_feedback.png) |
+<img width="1354" alt="Screenshot 2025-05-14 at 3 44 44 PM" src="https://github.com/user-attachments/assets/5ce61501-9291-4b15-8d9f-10e197343960" />
 
 > 💡 Add your screenshots to the `/assets/` folder to show functionality.
 
