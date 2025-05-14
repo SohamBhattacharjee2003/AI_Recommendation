@@ -48,3 +48,40 @@
 
 ## 📂 Project Structure
 
+---
+
+## 🖼️ Screenshots
+
+| Dashboard | Resume Suggestions |
+|----------|---------------------|
+| ![Dashboard](assets/dashboard.png) | ![Resume](assets/resume_feedback.png) |
+
+> 💡 Add your screenshots to the `/assets/` folder to show functionality.
+
+---
+
+## 🔧 Getting Started
+
+### 📦 Prerequisites
+
+- Node.js & npm
+- Python 3.8+
+- Firebase Account
+
+### 🚀 Installation
+
+```bash
+# Clone the repo
+git clone https://github.com/SohamBhattacharjee2003/AI_Recommendation.git
+cd AI_Recommendation
+
+# Setup Frontend
+cd frontend
+npm install
+npm run dev
+
+# Setup Backend
+cd ../backend
+pip install -r requirements.txt
+python app.py
+
